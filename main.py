@@ -14,7 +14,7 @@ class CompiledClass(nn.Module):
         return self.num
     
 m = CompiledClass()
-m = torch.compile(m)
+m = torch.compile(m, backend="eager")
 
 torch._logging.set_logs(dynamo = logging.DEBUG)
 torch._dynamo.config.verbose = True
